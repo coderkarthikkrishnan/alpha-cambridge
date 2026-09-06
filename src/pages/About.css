@@ -1,0 +1,440 @@
+/* About.css */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-page-wrapper {
+  background-color: #fafbfc; /* slightly off white */
+  color: #1a202c;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Base styles / typography */
+.about-page-wrapper h1,
+.about-page-wrapper h2,
+.about-page-wrapper h3,
+.about-page-wrapper p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Staggered Entry Animation */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* Sections */
+.about-hero {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #f0f4f8;
+  color: #4a5568;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.text-primary-blue {
+  color: #1a56db;
+}
+
+.about-hero p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 24px;
+  margin-bottom: 80px;
+}
+
+/* Mobile grid */
+@media (max-width: 900px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bento-card {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid #e2e8f0;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+/* Bento Cards Hover Interactions */
+@media (hover: hover) and (pointer: fine) {
+  .bento-card:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow: 0 20px 30px -10px rgba(0, 50, 150, 0.12);
+    border-color: #bfdbfe;
+  }
+}
+
+/* Specific Grid Placements */
+.bento-card-student {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  padding: 0; /* padding applied to inner content */
+}
+
+.bento-card-purpose {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.bento-card-college {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.bento-card-global {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  background-color: #f0f7ff;
+  border: none;
+}
+
+.bento-card-serve {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+/* Mobile reset for specific placements */
+@media (max-width: 900px) {
+  .bento-card-student, .bento-card-purpose, .bento-card-college, .bento-card-global, .bento-card-serve {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .bento-card-student { min-height: 500px; }
+  .bento-card-college { min-height: 400px; }
+}
+
+/* Inner elements for cards */
+.card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Card 1: Student */
+.student-img-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 16px 16px 0 0;
+}
+.student-img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.6s ease;
+}
+.bento-card-student:hover .student-img-container img {
+  transform: scale(1.07);
+}
+.student-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Learn More Button */
+.btn-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #0f172a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: auto;
+  align-self: flex-start;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-learn-more:hover {
+    background: #1a56db;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 10px 20px rgba(13, 71, 161, 0.35);
+  }
+  .btn-learn-more:hover svg {
+    transform: translateX(6px);
+  }
+}
+.btn-learn-more:active {
+  transform: scale(0.96);
+}
+.btn-learn-more svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Card 3: College */
+.college-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1;
+}
+.college-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.bento-card-college:hover .college-bg img {
+  transform: scale(1.07);
+}
+.college-overlay {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%; height: 25%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+  z-index: 2;
+}
+.college-content {
+  position: relative;
+  z-index: 3;
+  padding: 32px;
+  color: white;
+}
+.college-content .card-title {
+  color: white;
+}
+.college-content .card-text {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Card 4: Global */
+.icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #EBF3FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.square-icon-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #EEF2F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.bento-card-global .card-title {
+  font-size: 1.5rem;
+}
+
+/* Card 5: Serve */
+.avatar-group {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-left: -12px;
+  background-color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.avatar:first-child {
+  margin-left: 0;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar-plus {
+  background: #f1f5f9;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Testimonials */
+.testimonials-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.testimonials-section .badge {
+  background: #f8fafc;
+}
+.testimonials-section h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+.testimonials-section > p {
+  color: #64748b;
+  margin-bottom: 48px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial-card {
+  background: #f8fafc;
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid transparent;
+}
+@media (hover: hover) and (pointer: fine) {
+  .testimonial-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: #bfdbfe;
+    background: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 50, 150, 0.08);
+  }
+  .testimonial-card:hover .quote-icon {
+    transform: scale(1.15);
+  }
+}
+
+.quote-icon {
+  color: #60a5fa;
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.testimonial-text {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.author-avatar img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+.author-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.author-role {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+

@@ -15,7 +15,7 @@ export default function About() {
           More than examinations.<br />
           <span className="text-primary-blue">A brighter future.</span>
         </h1>
-        <p>
+        <p className="hero-subtitle">
           At Alpha Cambridge Exam Centre, we connect learners, educators and institutions with globally recognised opportunities.
         </p>
       </section>
@@ -23,20 +23,20 @@ export default function About() {
       {/* Bento Grid */}
       <section className="bento-grid">
         
-        {/* Card 1: Student */}
+        {/* Card 1: Who We Are / Student */}
         <div className="bento-card bento-card-student animate-fade-in delay-1">
           <div className="student-img-container">
-            <img src={studentImg} alt="Student writing" />
+            <img src={studentImg} alt="Student taking exam" />
           </div>
           <div className="student-content">
             <span className="card-label">WHO WE ARE</span>
             <h2 className="card-title">Committed to<br />Your Progress</h2>
-            <p className="card-text" style={{ marginBottom: '24px' }}>
+            <p className="card-text">
               Alpha Training and Consultancy Services (ATCS) operates as an examination and certification centre, providing access to internationally recognised examination opportunities.
             </p>
             <Link to="/services" className="btn-learn-more">
-              Explore Services
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              Learn More
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
@@ -44,7 +44,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Card 2: Purpose */}
+        {/* Card 2: Our Purpose */}
         <div className="bento-card bento-card-purpose animate-fade-in delay-2">
           <span className="card-label">OUR PURPOSE</span>
           <h2 className="card-title">Creating Opportunities Through Global Recognition</h2>
@@ -53,19 +53,19 @@ export default function About() {
           </p>
         </div>
 
-        {/* Card 3: College */}
+        {/* Card 3: College / Examination Centre */}
         <div className="bento-card bento-card-college animate-fade-in delay-3">
           <div className="college-bg">
             <img src={collegeImg} alt="Alpha Arts and Science College" />
           </div>
           <div className="college-overlay"></div>
           <div className="college-content">
-            <h2 className="card-title" style={{ marginBottom: '8px' }}>A Trusted<br />Examination Centre</h2>
-            <p className="card-text" style={{ fontSize: '0.9rem' }}>Delivering a professional and well-organised examination experience.</p>
+            <h2 className="card-title">A Trusted<br />Examination Centre</h2>
+            <p className="card-text">Delivering a professional and well-organised examination experience.</p>
           </div>
         </div>
 
-        {/* Card 4: Global */}
+        {/* Card 4: Global Opportunities */}
         <div className="bento-card bento-card-global animate-fade-in delay-2">
           <div className="icon-container">
             <svg viewBox="0 0 24 24" width="24" height="24" stroke="#1D61E7" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -78,7 +78,7 @@ export default function About() {
           <p className="card-text">English skills for a brighter tomorrow.</p>
         </div>
 
-        {/* Card 5: Serve */}
+        {/* Card 5: Who We Serve */}
         <div className="bento-card bento-card-serve animate-fade-in delay-3">
           <div className="icon-container square-icon-container">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="#2B4B77">
@@ -86,8 +86,8 @@ export default function About() {
             </svg>
           </div>
           <span className="card-label">WHO WE SERVE</span>
-          <h2 className="card-title" style={{ fontSize: '1.4rem' }}>Students, Teachers,<br />Schools & Institutions</h2>
-          <p className="card-text" style={{ fontSize: '0.9rem' }}>Supporting a diverse community of learners and educators.</p>
+          <h2 className="card-title">Students, Teachers,<br />Schools & Institutions</h2>
+          <p className="card-text">Supporting a diverse community of learners and educators.</p>
           
           <div className="avatar-group">
             <div className="avatar"><img src="https://i.pravatar.cc/100?img=33" alt="User" /></div>
@@ -103,7 +103,7 @@ export default function About() {
       <section className="testimonials-section animate-fade-in delay-4">
         <span className="badge">TESTIMONIALS</span>
         <h2>What our clients say</h2>
-        <p>Hear from learners, educators and institutions who trust Alpha Cambridge Exam Centre.</p>
+        <p className="testimonials-subtitle">Hear from learners, educators and institutions who trust Alpha Cambridge Exam Centre.</p>
 
         <div className="testimonials-grid">
           

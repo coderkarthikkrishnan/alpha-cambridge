@@ -4,13 +4,10 @@ import './Navbar.css'
 
 /* ============================================================
    SECTION THEME MAP
-   Each section id maps to nav-text and nav-active colors.
-   Add more entries as new full-page sections are built.
    ============================================================ */
 const SECTION_THEMES = {
   'hero-cambridge': { text: '#000000', active: '#1677D2' },
   'hero-tkt':       { text: '#000000', active: '#B0000B' },
-  // Fallback for any other section (scrolled past hero)
   default:          { text: '#1A3B68', active: '#1677D2' },
 }
 
@@ -19,11 +16,12 @@ const NAV_LINKS = [
   { label: 'About',           to: '/about' },
   { label: 'Cambridge Exams', to: '/cambridge-exams' },
   { label: 'Services',        to: '/services' },
+  { label: 'FAQ',             to: '/faq' },
   { label: 'Contact',         to: '/contact' },
 ]
 
 /* ============================================================
-   CAMBRIDGE SHIELD — SVG logo (exact reproduction)
+   CAMBRIDGE SHIELD — SVG logo
    ============================================================ */
 function CambridgeShield() {
   return (
@@ -34,14 +32,12 @@ function CambridgeShield() {
       aria-label="Alpha Cambridge Exam Centre shield logo"
       role="img"
     >
-      {/* Shield outline */}
       <path
         d="M3 3h48v32c0 13-12 21-24 24C15 56 3 48 3 35V3z"
         fill="#003087"
         stroke="#D4AF37"
         strokeWidth="1.4"
       />
-      {/* Dividing cross */}
       <line x1="27" y1="3" x2="27" y2="59" stroke="#D4AF37" strokeWidth="1.2" />
       <line x1="3" y1="23" x2="51" y2="23" stroke="#D4AF37" strokeWidth="1.2" />
 
@@ -63,7 +59,7 @@ function CambridgeShield() {
       <path d="M43 16 Q45 18 43 20" stroke="#D4AF37" strokeWidth="1.1" fill="none" />
       <line x1="36" y1="9" x2="42" y2="9" stroke="#D4AF37" strokeWidth="1.4" />
 
-      {/* BOTTOM-LEFT: Red quadrant with crowns */}
+      {/* BOTTOM-LEFT: Red quadrant */}
       <path d="M3 23h24v12C27 42 18 47 15 48.5 12 47 3 42 3 35V23z" fill="#c41e3a" />
       {[10, 16].map(cx => (
         <g key={cx} transform={`translate(${cx}, 30)`}>
@@ -75,7 +71,7 @@ function CambridgeShield() {
         </g>
       ))}
 
-      {/* BOTTOM-RIGHT: Gold quadrant with lion */}
+      {/* BOTTOM-RIGHT: Gold quadrant */}
       <path d="M27 23h24v12c0 7.5-9 13-12 14.5-3-1.5-12-7-12-14.5V23z" fill="#D4AF37" />
       <text x="36" y="40" fontSize="14" fill="#003087" fontWeight="bold"
         fontFamily="serif" textAnchor="middle">♞</text>
@@ -90,35 +86,24 @@ function CambridgeShield() {
   )
 }
 
-/* ============================================================
-   MAIN NAVBAR
-   ============================================================ */
 export default function Navbar() {
   const [menuOpen, setMenuOpen]     = useState(false)
   const [scrolled, setScrolled]     = useState(false)
   const [theme, setTheme]           = useState(SECTION_THEMES['hero-cambridge'])
   const navRef                      = useRef(null)
 
-  /* ---- Scroll detection ---- */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  /* ---- Section-aware theme via IntersectionObserver ----
-     We observe elements with data-nav-theme attributes.
-     Each hero slide / page section exposes:
-       data-nav-theme="hero-cambridge"  or  "hero-tkt"  etc.
-     Navbar reads the theme and transitions its CSS variables.
-  ---------------------------------------------------------------- */
   useEffect(() => {
     const targets = document.querySelectorAll('[data-nav-theme]')
     if (!targets.length) return
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Find the most-visible intersecting section
         let best = null
         let bestRatio = 0
         entries.forEach(entry => {
@@ -139,7 +124,6 @@ export default function Navbar() {
     return () => observer.disconnect()
   }, [])
 
-  /* ---- Apply CSS vars on theme change ---- */
   useEffect(() => {
     const nav = navRef.current
     if (!nav) return
@@ -155,7 +139,6 @@ export default function Navbar() {
         ref={navRef}
         className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}
         role="banner"
-        /* Seed the CSS vars so there's no flash on first render */
         style={{
           '--nav-text':   theme.text,
           '--nav-active': theme.active,
@@ -163,7 +146,6 @@ export default function Navbar() {
       >
         <div className="navbar__inner">
 
-          {/* Logo — shield SVG, left-aligned */}
           <Link
             to="/"
             className="navbar__logo"
@@ -173,11 +155,9 @@ export default function Navbar() {
             <span className="navbar__logo-icon" aria-hidden="true">
               <CambridgeShield />
             </span>
-            {/* Visually hidden brand name for SEO / a11y */}
             <span className="sr-only">Alpha Cambridge Exam Centre</span>
           </Link>
 
-          {/* Desktop nav — right side */}
           <nav className="navbar__nav" aria-label="Main navigation">
             {NAV_LINKS.map(({ label, to }) => (
               <NavLink
@@ -193,7 +173,6 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Mobile hamburger — hidden on desktop */}
           <button
             className={`navbar__hamburger${menuOpen ? ' navbar__hamburger--open' : ''}`}
             onClick={() => setMenuOpen(p => !p)}
@@ -209,7 +188,6 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile slide-down menu */}
       <nav
         id="mobile-nav"
         className={`navbar__mobile${menuOpen ? ' navbar__mobile--open' : ''}`}

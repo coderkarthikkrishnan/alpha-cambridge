@@ -10,11 +10,13 @@
   min-height: 640px;
   max-height: 900px;
   overflow: hidden;
+
   /*
     Reference image: rich sky-blue at top (#87CEEA)
     → pale mid-blue in the middle
     → warm white/cream at the bottom (#FFFEF0)
   */
+
   background:
     linear-gradient(to bottom,
       #87CEEA 0%,
@@ -541,16 +543,23 @@
   }
 
   .hero__slide {
-    align-items: flex-start;
+    align-items: stretch; /* Stretch the slide content to full height */
+    min-height: 100svh;
+  }
+
+  /* Magic to allow the container to grow to fit the content! */
+  .hero__slide.is-active {
+    position: relative;
   }
 
   .hero__slide-inner {
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr; /* 1fr makes the image row stretch to fill remaining space */
     padding-top: var(--space-6);
-    padding-bottom: var(--space-16);
-    gap: var(--space-6);
-    align-items: start;
+    padding-bottom: 0; /* Remove padding so image sits flush with bottom */
+    gap: var(--space-4);
+    align-items: stretch; /* Stretch the grid items */
+    height: 100%; /* Fill the entire slide height */
   }
 
   .hero__content {
@@ -560,19 +569,29 @@
 
   .hero__image-wrap {
     order: 2;
-    height: 340px;
+    height: 100%; /* Fill the 1fr grid row exactly */
+    min-height: 360px; /* But ensure it never gets smaller than 360px */
     width: 100%;
-    align-items: center;
+    align-items: flex-end; /* Anchor image to the bottom of this wrapper */
     justify-content: center;
+    overflow: visible;
   }
 
   .hero__image {
-    height: 100%;
-    max-height: 340px;
-    width: auto;
-    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    width: 120%;
+    max-width: 120%;
     border-radius: var(--radius-xl);
     object-fit: contain;
+    object-position: bottom center;
+  }
+
+  /* Reset the Cambridge slide image overrides for mobile */
+  .hero__slide--cambridge .hero__image {
+    width: 130%;
+    max-width: 130%;
+    transform: translateX(0);
   }
 
   .hero__line {
@@ -590,15 +609,16 @@
 
 @media (max-width: 480px) {
   .hero__slide-inner {
-    padding: 0 var(--space-4) var(--space-12);
+    padding: 0 var(--space-4) 0; /* Removed bottom padding */
   }
 
   .hero__image-wrap {
     height: 280px;
+    min-height: 280px; /* Use min-height so it still fits nicely */
   }
 
   .hero__image {
-    height: 280px;
-    max-width: 220px;
+    max-width: 140%; /* Let it scale a bit more on tiny screens */
+    width: 140%;
   }
 }

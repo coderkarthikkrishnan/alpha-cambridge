@@ -34,13 +34,13 @@ export default function About() {
             <p className="card-text">
               Alpha Training and Consultancy Services (ATCS) operates as an examination and certification centre, providing access to internationally recognised examination opportunities.
             </p>
-            <Link to="/services" className="btn-learn-more">
+            <a href="#services" className="btn-learn-more">
               Learn More
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
 

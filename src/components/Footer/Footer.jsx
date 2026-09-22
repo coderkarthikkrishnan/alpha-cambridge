@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import clgLogo from '../../assets/images/clg logo.png';
 import './Footer.css';
 
 const GOOGLE_SCRIPT_WEB_APP_URL = '';
@@ -44,35 +45,7 @@ export default function Footer() {
           <div className="brand-header">
             {/* Cambridge Crest Logo Shield */}
             <div className="brand-logo-shield">
-              <svg viewBox="0 0 54 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Shield outer contour */}
-                <path d="M3 3h48v32c0 13-12 21-24 24C15 56 3 48 3 35V3z" fill="#002b80" stroke="#E2B842" strokeWidth="1.5" />
-                <line x1="27" y1="3" x2="27" y2="59" stroke="#E2B842" strokeWidth="1.2" />
-                <line x1="3" y1="23" x2="51" y2="23" stroke="#E2B842" strokeWidth="1.2" />
-
-                {/* Top Left Quadrant - Red with crowns */}
-                <path d="M3 3h24v20H3V3z" fill="#b91c1c" />
-                <rect x="6" y="6" width="7" height="5" fill="#E2B842" rx="1" />
-                <rect x="16" y="6" width="7" height="5" fill="#E2B842" rx="1" />
-                <rect x="6" y="14" width="7" height="5" fill="#E2B842" rx="1" />
-                <rect x="16" y="14" width="7" height="5" fill="#E2B842" rx="1" />
-
-                {/* Top Right Quadrant - White with red lion */}
-                <path d="M27 3h24v20H27V3z" fill="#ffffff" />
-                <path d="M31 10h16v3H31z" fill="#b91c1c" />
-                <circle cx="39" cy="11.5" r="3" fill="#E2B842" />
-
-                {/* Bottom Left Quadrant - Red */}
-                <path d="M3 23h24v12C27 42 18 47 15 48.5 12 47 3 42 3 35V23z" fill="#b91c1c" />
-                <text x="15" y="38" fontSize="13" fill="#E2B842" fontWeight="bold" textAnchor="middle">★</text>
-
-                {/* Bottom Right Quadrant - Gold with blue motif */}
-                <path d="M27 23h24v12c0 7.5-9 13-12 14.5-3-1.5-12-7-12-14.5V23z" fill="#E2B842" />
-                <text x="39" y="38" fontSize="13" fill="#002b80" fontWeight="bold" textAnchor="middle">♞</text>
-
-                {/* Bottom Banner */}
-                <path d="M7 51 Q27 56 47 51 L49 54 Q27 60 5 54 Z" fill="#E2B842" />
-              </svg>
+              <img src={clgLogo} alt="Alpha Cambridge Exam Centre Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <h3 className="brand-title">
               Alpha Cambridge<br />Exam Centre

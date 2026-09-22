@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    HERO SLIDER
    ============================================================ */
 
@@ -81,7 +81,7 @@
   margin: 0 auto;
   padding: 0 var(--space-6) var(--space-8);
   display: grid;
-  grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 550px;
   gap: var(--space-8);
   align-items: center;
   height: 100%;
@@ -435,6 +435,12 @@
 
 .hero__slide--cambridge .hero__image-wrap::before {
   background: radial-gradient(circle, #93c5fd, transparent);
+}
+
+.hero__slide--cambridge .hero__image {
+  width: 135%;
+  max-width: 135%;
+  transform: translateX(-15%);
 }
 
 .hero__slide--tkt .hero__image-wrap::before {

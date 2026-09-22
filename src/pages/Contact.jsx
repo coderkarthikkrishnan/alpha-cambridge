@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
+const GOOGLE_SCRIPT_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyl0B9VXFvjDbuQPOI9KkEV-E0-biGESvlXuCKmyf6d5u0Nvvx2vEolRWblMiQkbNytkw/exec';
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     examType: '',
@@ -10,7 +12,7 @@ export default function Contact() {
     message: ''
   });
 
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle, loading, success, error
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,11 +20,25 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('loading');
+
+    // Fire and forget to make UI feel instantaneous
+    fetch(GOOGLE_SCRIPT_WEB_APP_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    }).catch(error => console.error('Error submitting form:', error));
+    
+    // Immediately show success state
+    setStatus('success');
+    
     setTimeout(() => {
-      setSubmitted(false);
+      setStatus('idle');
       setFormData({ examType: '', fullName: '', email: '', phone: '', message: '' });
-    }, 4000);
+    }, 5000);
   };
 
   return (
@@ -85,11 +101,17 @@ export default function Contact() {
 
         {/* Right Column: Form Card */}
         <div className="contact-form-card">
-          {submitted ? (
+          {status === 'success' ? (
             <div className="form-success-state">
               <div className="success-icon">✓</div>
               <h3>Thank you for reaching out!</h3>
               <p>Our support team will contact you at <strong>{formData.email || 'your email'}</strong> within 24 hours.</p>
+            </div>
+          ) : status === 'error' ? (
+            <div className="form-success-state">
+              <div className="success-icon" style={{ backgroundColor: '#fee2e2', color: '#dc2626' }}>!</div>
+              <h3>Something went wrong</h3>
+              <p>We couldn't submit your form. Please try again or email us directly.</p>
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
@@ -175,12 +197,14 @@ export default function Contact() {
               </div>
 
               {/* Submit Button */}
-              <button type="submit" className="submit-yellow-btn">
-                Send Message
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
+              <button type="submit" className="submit-yellow-btn" disabled={status === 'loading'}>
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
+                {status !== 'loading' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                )}
               </button>
 
             </form>

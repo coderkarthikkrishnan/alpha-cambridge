@@ -3,6 +3,7 @@ import { SlideProvider } from './context/SlideContext'
 import Navbar from './components/Navbar/Navbar'
 import Footer from './components/Footer/Footer'
 import Home from './pages/Home'
+import CambridgeExamDetails from './pages/CambridgeExamDetails'
 import About from './pages/About'
 import CambridgeExams from './pages/CambridgeExams'
 import Services from './pages/Services'
@@ -17,12 +18,8 @@ export default function App() {
           <Navbar />
           <main>
             <Routes>
-              <Route path="/"                element={<Home />} />
-              <Route path="/about"           element={<About />} />
-              <Route path="/cambridge-exams" element={<CambridgeExams />} />
-              <Route path="/services"        element={<Services />} />
-              <Route path="/contact"         element={<Contact />} />
-              <Route path="/faq"             element={<FAQ />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/cambridge-exam-details" element={<CambridgeExamDetails />} />
             </Routes>
           </main>
           <Footer />

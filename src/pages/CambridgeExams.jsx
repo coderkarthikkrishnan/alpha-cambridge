@@ -1,5 +1,4 @@
 const pageStyle = {
-  paddingTop: '72px',
   minHeight: 'calc(100vh - 72px)',
   display: 'flex', alignItems: 'center', justifyContent: 'center',
   background: 'linear-gradient(160deg,#dbeafe 0%,#eff6ff 60%,#f0f9ff 100%)',
@@ -26,7 +25,7 @@ const btnStyle = {
 
 export default function CambridgeExams() {
   return (
-    <div style={{ paddingTop: '72px' }}>
+    <div>
       <section style={pageStyle}>
         <div style={innerStyle}>
           <span style={badgeStyle}>Cambridge Exams</span>
@@ -36,7 +35,7 @@ export default function CambridgeExams() {
             from A2 Key to C2 Proficiency — as well as the Teaching Knowledge Test (TKT) for educators.
             Each qualification is globally recognized and benchmarked to the CEFR.
           </p>
-          <a href="/contact" style={btnStyle}>Enquire Now</a>
+          <a href="#contact" style={btnStyle}>Enquire Now</a>
         </div>
       </section>
     </div>

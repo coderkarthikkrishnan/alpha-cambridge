@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    HERO SLIDER
    ============================================================ */
 
@@ -410,8 +410,8 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  height: calc(100vh - 72px);
-  max-height: 580px;
+  height: 700px;
+  max-height: 700px;
   object-fit: contain;
   object-position: bottom center;
   display: block;
@@ -424,7 +424,7 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
+  width: 100px;
   height: 280px;
   border-radius: 50%;
   filter: blur(60px);

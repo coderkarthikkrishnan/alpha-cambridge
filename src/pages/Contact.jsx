@@ -65,7 +65,7 @@ export default function Contact() {
               </div>
               <div className="detail-text">
                 <span className="detail-label">Email</span>
-                <span className="detail-value">enquiries@alphacambridge.com</span>
+                <span className="detail-value"><a href="mailto:alphatcservices@gmail.com" style={{color: 'inherit', textDecoration: 'none'}}>alphatcservices@gmail.com</a></span>
               </div>
             </div>
 
@@ -79,7 +79,7 @@ export default function Contact() {
               </div>
               <div className="detail-text">
                 <span className="detail-label">Address</span>
-                <span className="detail-value">123 Learning Avenue, Singapore</span>
+                <span className="detail-value">No: 17/7, South West Road, CIT Nagar, Chennai - 600035</span>
               </div>
             </div>
 
@@ -92,7 +92,13 @@ export default function Contact() {
               </div>
               <div className="detail-text">
                 <span className="detail-label">Call & WhatsApp</span>
-                <span className="detail-value">+65 1234 5678</span>
+                <span className="detail-value">
+                  <a href="tel:+919150031264" style={{color: 'inherit', textDecoration: 'none', marginRight: '8px'}}>Call</a> 
+                  | 
+                  <a href="https://wa.me/919150031264" target="_blank" rel="noopener noreferrer" style={{color: 'inherit', textDecoration: 'none', marginLeft: '8px'}}>WhatsApp</a>
+                  <br />
+                  +91 9150031264
+                </span>
               </div>
             </div>
 
@@ -128,6 +134,9 @@ export default function Contact() {
                     required
                   >
                     <option value="" disabled hidden>Select an exam type</option>
+                    <option value="A1 Starters">A1 Starters</option>
+                    <option value="A1 Movers">A1 Movers</option>
+                    <option value="A2 Flyers">A2 Flyers</option>
                     <option value="A2 Key (KET)">A2 Key (KET)</option>
                     <option value="B1 Preliminary (PET)">B1 Preliminary (PET)</option>
                     <option value="B2 First (FCE)">B2 First (FCE)</option>

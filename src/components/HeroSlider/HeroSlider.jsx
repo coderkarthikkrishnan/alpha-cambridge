@@ -17,13 +17,11 @@ const SLIDES = [
       { text: 'Globally recognized', bold: true },
       { text: 'English qualifications', bold: false },
       {
-        // Mixed weight: "with Alpha" (400) + "Cambridge" (700)
         parts: [
-          { text: 'with Alpha ', bold: false },
-          { text: 'Cambridge', bold: true },
+          { text: 'with Alpha Training and ', bold: false },
+          { text: 'Consultancy Services.', bold: true },
         ],
       },
-      { text: 'Exam Centre.', script: true },
     ],
     cta: 'Enquire Now',
     ctaLink: '#contact',

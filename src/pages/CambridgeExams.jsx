@@ -31,7 +31,7 @@ export default function CambridgeExams() {
           <span style={badgeStyle}>Cambridge Exams</span>
           <h1 style={h1Style}>Cambridge English Qualifications</h1>
           <p style={bodyStyle}>
-            Alpha Cambridge offers the complete range of Cambridge Assessment English qualifications —
+            Alpha Training and Consultancy Services offers the complete range of Cambridge Assessment English qualifications —
             from A2 Key to C2 Proficiency — as well as the Teaching Knowledge Test (TKT) for educators.
             Each qualification is globally recognized and benchmarked to the CEFR.
           </p>

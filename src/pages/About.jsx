@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 import studentImg from '../assets/student.png';
 import collegeImg from '../assets/college.png';
 import './About.css';
-
 export default function About() {
   return (
     <div className="about-page-wrapper">
-      
+
       {/* Hero Section */}
       <section className="about-hero animate-fade-in">
         <span className="badge">ABOUT US</span>
@@ -16,13 +15,13 @@ export default function About() {
           <span className="text-primary-blue">A brighter future.</span>
         </h1>
         <p className="hero-subtitle">
-          At Alpha Cambridge Exam Centre, we connect learners, educators and institutions with globally recognised opportunities.
+          At Alpha, we connect learners, educators and institutions with globally recognised opportunities.
         </p>
       </section>
 
       {/* Bento Grid */}
       <section className="bento-grid">
-        
+
         {/* Card 1: Who We Are / Student */}
         <div className="bento-card bento-card-student animate-fade-in delay-1">
           <div className="student-img-container">
@@ -56,7 +55,7 @@ export default function About() {
         {/* Card 3: College / Examination Centre */}
         <div className="bento-card bento-card-college animate-fade-in delay-3">
           <div className="college-bg">
-            <img src={collegeImg} alt="Alpha Arts and Science College" />
+            <img src={collegeImg} alt="Alpha Group of Institutions" style={{ objectFit: 'contain', backgroundColor: '#fff' }} />
           </div>
           <div className="college-overlay"></div>
           <div className="college-content">
@@ -82,13 +81,13 @@ export default function About() {
         <div className="bento-card bento-card-serve animate-fade-in delay-3">
           <div className="icon-container square-icon-container">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="#2B4B77">
-              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
             </svg>
           </div>
           <span className="card-label">WHO WE SERVE</span>
           <h2 className="card-title">Students, Teachers,<br />Schools & Institutions</h2>
           <p className="card-text">Supporting a diverse community of learners and educators.</p>
-          
+
           <div className="avatar-group">
             <div className="avatar"><img src="https://i.pravatar.cc/100?img=33" alt="User" /></div>
             <div className="avatar"><img src="https://i.pravatar.cc/100?img=47" alt="User" /></div>
@@ -103,10 +102,10 @@ export default function About() {
       <section className="testimonials-section animate-fade-in delay-4">
         <span className="badge">TESTIMONIALS</span>
         <h2>What our clients say</h2>
-        <p className="testimonials-subtitle">Hear from learners, educators and institutions who trust Alpha Cambridge Exam Centre.</p>
+        <p className="testimonials-subtitle">Hear from learners, educators and institutions who trust Alpha Training and Consultancy Services.</p>
 
         <div className="testimonials-grid">
-          
+
           {/* Testimonial 1 */}
           <div className="testimonial-card">
             <svg className="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

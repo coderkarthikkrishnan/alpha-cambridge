@@ -45,10 +45,10 @@ export default function Footer() {
           <div className="brand-header">
             {/* Cambridge Crest Logo Shield */}
             <div className="brand-logo-shield">
-              <img src={clgLogo} alt="Alpha Cambridge Exam Centre Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src={clgLogo} alt="Alpha Training and Consultancy Services Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <h3 className="brand-title">
-              Alpha Cambridge<br />Exam Centre
+              Alpha Training and<br />Consultancy Services
             </h3>
           </div>
 

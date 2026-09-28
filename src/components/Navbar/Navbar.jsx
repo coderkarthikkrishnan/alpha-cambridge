@@ -83,13 +83,16 @@ export default function Navbar() {
           <Link
             to="/"
             className="navbar__logo"
-            aria-label="Alpha Cambridge Exam Centre — Home"
+            aria-label="Alpha Training and Consultancy Services — Home"
             onClick={closeMenu}
           >
             <span className="navbar__logo-icon" aria-hidden="true">
-              <img src={clgLogo} alt="Alpha Cambridge Exam Centre Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src={clgLogo} alt="Alpha Training and Consultancy Services Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </span>
-            <span className="navbar__logo-text">Alpha Cambridge</span>
+            <span className="navbar__logo-text">
+              <span className="navbar__logo-title">Alpha Training and</span>
+              <span className="navbar__logo-subtitle">Consultancy Services</span>
+            </span>
           </Link>
 
           <nav className="navbar__nav" aria-label="Main navigation">

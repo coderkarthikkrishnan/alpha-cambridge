@@ -4,7 +4,7 @@ import './FAQ.css';
 const FAQ_DATA = [
   {
     question: "What Cambridge English examinations do you offer?",
-    answer: "Alpha Cambridge Exam Centre offers a full suite of Cambridge Assessment English qualifications, including A2 Key (KET), B1 Preliminary (PET), B2 First (FCE), C1 Advanced (CAE), C2 Proficiency (CPE), and the Teaching Knowledge Test (TKT) for educators.",
+    answer: "Alpha Training and Consultancy Services offers a full suite of Cambridge Assessment English qualifications, including A1 Starters, A1 Movers, A2 Flyers, A2 Key (KET), B1 Preliminary (PET), B2 First (FCE), C1 Advanced (CAE), and the Teaching Knowledge Test (TKT) for educators.",
     category: "General"
   },
   {
@@ -14,13 +14,9 @@ const FAQ_DATA = [
   },
   {
     question: "When and where are exams held?",
-    answer: "Examinations are held regularly throughout the year at our authorised examination centre in Singapore, as well as designated institutional venues for institutional candidates. Detailed timetables are provided upon registration confirmation.",
+    answer: "Examinations are held regularly throughout the year at our authorised examination centre in Chennai, Tamil Nadu. Detailed timetables are provided upon registration confirmation.",
     category: "Exams"
-  },
-  {
-    question: "How long does it take to receive examination results and certificates?",
-    answer: "Computer-based exam results are typically available within 2 to 3 weeks, while paper-based exam results take 4 to 6 weeks. Official Cambridge Assessment English certificates are dispatched approximately 2 weeks after results are released.",
-    category: "Results"
+
   },
   {
     question: "What is the Teaching Knowledge Test (TKT)?",
@@ -28,8 +24,8 @@ const FAQ_DATA = [
     category: "General"
   },
   {
-    question: "Can schools and colleges partner with Alpha Cambridge Exam Centre?",
-    answer: "Yes! We work closely with educational institutions to provide institutional exam registration, preparation resources, on-site test administration, and dedicated teacher support.",
+    question: "Can schools and colleges partner with Alpha Training and Consultancy Services?",
+    answer: "Yes! We work closely with educational institutions to provide institutional exam registration, preparation resources, and on-site test administration.",
     category: "Institutional"
   }
 ];
@@ -38,7 +34,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['All', 'General', 'Registration', 'Exams', 'Results', 'Institutional'];
+  const categories = ['All', 'General', 'Registration', 'Exams', 'Institutional'];
 
   const filteredFaqs = activeCategory === 'All' 
     ? FAQ_DATA 
